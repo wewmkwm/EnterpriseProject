@@ -6,14 +6,53 @@ include("NavBar.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Glasses Website</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Visionary Eyewear</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    .about-us-container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    h1, h2 {
+        color: #007bff;
+    }
+    h1 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.8em;
+        margin-top: 20px;
+    }
+    p {
+        line-height: 1.6;
+        margin: 10px 0;
+    }
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    li {
+        margin: 5px 0;
+    }
+  </style>
 </head>
 <body>
     <div class="about-us-container">
-    <h1>About Us</h1>
+        <h1>About Us</h1>
         <p>Welcome to Visionary Eyewear, where style meets precision. We believe that the perfect pair of glasses is not just about clear vision—it's about expressing who you are. Our mission is to provide you with eyewear that enhances your lifestyle, offering both exceptional quality and cutting-edge style.</p>
         
         <h2>Our Story</h2>
@@ -36,9 +75,6 @@ include("NavBar.php");
             <li><strong>Customer-Centric:</strong> Your satisfaction is our top priority. From seamless online shopping to exceptional customer service, we're here for you every step of the way.</li>
             <li><strong>Affordable Luxury:</strong> We believe that great eyewear shouldn't break the bank. Enjoy premium quality at prices you'll love.</li>
         </ul>
-        
-        <h2>Join Our Community</h2>
-        <p>At Visionary Eyewear, we're more than just a brand—we're a community of visionaries. Follow us on social media to stay inspired, share your looks, and be the first to know about our latest arrivals and special offers.</p>
         
         <p>Thank you for choosing Visionary Eyewear. See the world differently with us.</p>
     </div>
