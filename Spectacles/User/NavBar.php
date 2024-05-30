@@ -140,9 +140,9 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <div class="row">
                                     <div class="col-sm category-column">
-                                        <li class="category-item"><a class="dropdown-item" href="#">Kids Frame</a></li>
+                                        <li class="category-item"><a class="dropdown-item" href="frame_product.php">Kids Frame</a></li>
                                         <li class="category-item"><a class="dropdown-item" href="frame_product.php">Men / Women Frame</a></li>
-                                        <li class="category-item"><a class="dropdown-item" href="#">Sunglasses</a></li>
+                                        <li class="category-item"><a class="dropdown-item" href="frame_product.php">Sunglasses</a></li>
                                     </div>
                                     <div class="col-xxl picture-column">
                                         <img class="picture" src="Picture/Nav-KidsFrame.jpg" alt="Kids Frame">
@@ -169,9 +169,6 @@
         </nav>
     </div>
 	
-
-	
-
 		<!--Script for slideshow-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
