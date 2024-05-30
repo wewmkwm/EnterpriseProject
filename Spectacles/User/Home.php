@@ -13,11 +13,12 @@ include("NavBar.php");
     <style>
         /* Custom styles for the slideshow container */
         .slideshow-container {
-            max-width: 1920px; /* Set the maximum width of the slideshow container */
-            position: relative;
-            margin: auto;
-            height: auto;
-        }
+  max-width: 800px; /* Adjust this value to your preference */
+  position: relative;
+  margin: auto;
+  height: auto;
+  border: 5px solid #ddd; /* Add border style here */
+}
         .slideshow-container img {
             width: 100%;
             height: 500px;
@@ -36,6 +37,15 @@ include("NavBar.php");
             transition: 0.6s ease;
             border-radius: 0 3px 3px 0;
             background-color: transparent; /* Remove background color */
+        }
+
+        .prev {
+            position: absolute; /* Make the button absolute positioned */
+            left: 0; /* Position it at the left edge of the page */
+            top: 50%; /* Maintain vertical centering */
+            transform: translateY(-50%); /* Offset button height for centering */
+            z-index: 1; /* Ensure button is above other elements */
+        
         }
         /* Position the "next button" to the right */
         .next {
@@ -345,46 +355,199 @@ include("NavBar.php");
             <h2>Brands</h2>
         </div>
         <div class="row">
-            <div class="col">1 </div>
-            <div class="col">1 </div>
-            <div class="col">1 </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/1. BVLGARI.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/1. BVLGARI.jpg'" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h3>BVLGARI</h3>
+                            <p>A luxurious Italian jewelry brand.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/2. COACH.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/2. COACH.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h3>COACH</h3>
+                            <p>American luxury leather goods brand known for its handbags, combining modern and heritage styles.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/3. DIOR.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/3. DIOR.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h3>DIOR</h3>
+                            <p>French luxury fashion house known for its haute couture, leather goods, fragrances, and cosmetics.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col">1 </div>
-            <div class="col">1 </div>
-            <div class="col"> 1</div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/4. ESCADA.png'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/4. ESCADA.png" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h3>Escada</h3>
+                            <p>German luxury fashion house known for its bold colors, feminine silhouettes, and high-quality tailoring.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/5. GENTLE MONSTER.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/5. GENTLE MONSTER.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Gentle Monster</h3>
+                            <p>South Korean luxury eyewear brand known for its innovative and fashion-forward designs.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/6. GUCCI.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/3. DIOR.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Gucci </h3>
+                            <p>Italian luxury fashion house known for its high-end handbags,
+shoes, clothing, and accessories.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col">1 </div>
-            <div class="col">1 </div>
-            <div class="col">1 </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/7. JAGUAR.webp'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/7. JAGUAR.webp" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Jaguar</h3>
+                            <p>British luxury car manufacturer known for its performance vehicles and sleek designs.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/8. MICHAEL KORS.png'); background-size: contain;">
+                    <img class="card-img d-none" src="8. MICHAEL KORS.png" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Michael Kors</h3>
+                            <p>American luxury fashion brand known for its accessible luxury handbags,
+clothing, footwear, and fragrances.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/9. OAKLEY.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/3. OAKLEY.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Oakley</h3>
+                            <p> American sports performance brand known for its sunglasses,
+eyeglasses, apparel, and footwear.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col">1 </div>
-            <div class="col"> 1</div>
-            <div class="col"> 1</div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/10. POLICE.png'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/10. POLICE.png'" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Police </h3>
+                            <p>Italian eyewear brand known for its trendy and stylish sunglasses and eyeglasses.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/11. PORSCHE DESIGN.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/11. PORSCHE DESIGN.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Porsche Design</h3>
+                            <p>German lifestyle brand creating luxury products inspired by Porsche car design.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/12. PRADA.png'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/12. PRADA.png" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Prada</h3>
+                            <p>Italian luxury fashion house known for its high-quality leather goods, handbags, shoes, and clothing.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col">1 </div>
-            <div class="col">1 </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/13. PUMA.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/13. PUMA.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Puma </h3>
+                            <p>German multinational sportswear company known for its athletic apparel, footwear, and accessories.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/14. RAY BAN.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/14. RAY BAN.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Ray-Ban</h3>
+                            <p>American sunglasses brand known for its iconic aviator and wayfarer styles.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/15. VOGUE.png'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/14. VOGUE.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Vogue</h3>
+                            <p>American fashion magazine known for its influence on global fashion trends and culture.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
-	<?php
-	
-if (isset($_SESSION['user_id'])) {
-        // Display the user_id session variable
-        echo $_SESSION['user_id'];
-    } else {
-        // Display a message if user_id session variable is not set
-        echo "User ID not set";
-    }
-
-
-// After setting session variables
-echo "User ID: " . $_SESSION['user_id'];
-echo "Username: " . $_SESSION['username'];
-
-	?>
 </body>
 </html>
