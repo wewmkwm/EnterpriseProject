@@ -158,6 +158,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="about_us.php">Our Story</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="logout()">Log Out</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="cart-icon">
@@ -182,7 +185,19 @@
                 });
             });
         });
+
+        function logout() {
+  // Assuming you're using sessions
+  fetch('logout.php') // Replace with your logout script URL if different
+    .then(response => response.text()) // Process the response (optional)
+    .then(() => {
+      window.location.href = "index.php"; // Redirect to index.php on logout
+    })
+    .catch(error => console.error(error)); // Handle errors (optional)
+}
     </script>
+    
 	
 </body>
 </html>
+
