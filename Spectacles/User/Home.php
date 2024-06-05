@@ -1,14 +1,13 @@
 <?php
 session_start();
-include("NavBar.php");
-
 
 ?>
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
@@ -180,6 +179,9 @@ include("NavBar.php");
             transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
         }
     </style>
+	<?php
+	include("NavBar.php");
+	?>
 </head>
 <body>
     <div class="container">

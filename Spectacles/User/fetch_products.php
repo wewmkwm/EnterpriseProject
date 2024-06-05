@@ -29,10 +29,10 @@
             $brandId = $_GET['brandId'];
             if ($brandId === 'null') {
                 // If All button is clicked, fetch all products
-                $query = "SELECT * FROM models";
+                $query = "SELECT * FROM models WHERE category = 'Unisex'";
             } else {
                 // Otherwise, fetch products of the selected brand
-                $query = "SELECT * FROM models WHERE id = $brandId";
+                $query = "SELECT * FROM models WHERE id = $brandId AND category = 'Unisex'";
             }
 
             $result = mysqli_query($conn, $query);

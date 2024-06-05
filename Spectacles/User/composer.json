@@ -1,0 +1,16 @@
+{
+    "name": "alex/user",
+    "description": "Visionary Eyewear",
+    "type": "project",
+    "require": {
+        "twilio/sdk": "^8.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Cheow",
+            "email": "alexcheow12@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

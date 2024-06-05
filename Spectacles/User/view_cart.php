@@ -81,12 +81,22 @@ if(isset($_SESSION['user_id'])) {
         echo "</div>"; // Close row
 
         // Display button to proceed to payment
-        echo "<div class='row'>";
-        echo "<div class='col'>";
-        // Link to the address selection page - Can change between display.php to check details / address to proceed to address
-        echo "<a href='address.php' class='btn btn-primary'>Proceed to Payment</a>";
-        echo "</div>"; // Close col
-        echo "</div>"; // Close row
+        // Display button to proceed to payment if there are items in the cart
+if ($total_price > 0) {
+    echo "<div class='row'>";
+    echo "<div class='col'>";
+    // Link to the address selection page - Can change between display.php to check details / address to proceed to address
+    echo "<a href='calender_appointment.php' class='btn btn-primary'>Purchase With Power Prescription</a><br/><br/><br/>";
+	echo "<a href='address.php' class='btn btn-primary'>Purchase With Frame Only</a>";
+    echo "</div>"; // Close col
+    echo "</div>"; // Close row
+} else {
+    echo "<div class='row'>";
+    echo "<div class='col'>";
+    echo "<p class='mt-4'>Your cart is empty.</p>";
+    echo "</div>"; // Close col
+    echo "</div>"; // Close row
+}
 
         echo "</div>"; // Close container
 
