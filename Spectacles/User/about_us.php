@@ -11,8 +11,10 @@ include("NavBar.php");
   <title>About Us - Visionary Eyewear</title>
   <style>
     body {
-        font-family: 'Times New Roman', serif;
-        background-color: #001f3f;
+        background-image: url('Picture/about us background.webp'); /* Add your background image path here */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         color: #fff;
         margin: 0;
         padding: 0;
@@ -25,11 +27,10 @@ include("NavBar.php");
     .section {
         margin-bottom: 30px;
         padding: 20px;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
         color: #333;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
-        width: 48%;
         opacity: 0;
         transform: translateY(50px);
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -74,14 +75,15 @@ include("NavBar.php");
     .about-us {
         text-align: center;
         margin-bottom: 50px;
+        background-color: black;
+        color: #fff;
+        padding: 20px;
+        border-radius: 8px;
     }
-    .left {
-        float: left;
+    .clearfix::after {
+        content: "";
         clear: both;
-    }
-    .right {
-        float: right;
-        clear: both;
+        display: table;
     }
   </style>
 </head>
@@ -92,12 +94,12 @@ include("NavBar.php");
             <p>Welcome to Visionary Eyewear, where style meets precision. We believe that the perfect pair of glasses is not just about clear vision—it's about expressing who you are. Our mission is to provide you with eyewear that enhances your lifestyle, offering both exceptional quality and cutting-edge style.</p>
         </div>
         
-        <div class="section story left">
+        <div class="section story clearfix">
             <h2>Our Story</h2>
             <p>Founded in 2015, Visionary Eyewear began with a simple idea: to revolutionize the way people see the world. Frustrated with the limited choices and high prices in the market, our founders set out to create a brand that offers stylish, high-quality eyewear at accessible prices. Today, we are proud to have grown into a trusted name, beloved by customers around the globe.</p>
         </div>
         
-        <div class="section collection right">
+        <div class="section collection clearfix">
             <h2>Our Collection</h2>
             <p>At Visionary Eyewear, we offer a diverse range of glasses that cater to every taste and need. Whether you're looking for classic frames, modern designs, or something uniquely you, we have the perfect pair. Our collection features:</p>
             <ul>
@@ -107,12 +109,12 @@ include("NavBar.php");
             </ul>
         </div>
         
-        <div class="section commitment left">
+        <div class="section commitment clearfix">
             <h2>Our Commitment</h2>
             <p>Quality is at the heart of everything we do. Each pair of glasses is crafted with precision, using the finest materials and advanced technology. We partner with skilled artisans and top optical experts to ensure every product meets our rigorous standards.</p>
         </div>
         
-        <div class="section choose-us right">
+        <div class="section choose-us clearfix">
             <h2>Why Choose Us?</h2>
             <ul>
                 <li><strong>Style and Innovation:</strong> Stay ahead of the trends with our constantly updated collection.</li>
@@ -121,7 +123,7 @@ include("NavBar.php");
             </ul>
         </div>
         
-        <div class="section" style="clear: both;">
+        <div class="section clearfix">
             <p>Thank you for choosing Visionary Eyewear. See the world differently with us.</p>
         </div>
     </div>

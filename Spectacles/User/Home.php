@@ -13,12 +13,13 @@ include("NavBar.php");
     <style>
         /* Custom styles for the slideshow container */
         .slideshow-container {
-  max-width: 800px; /* Adjust this value to your preference */
-  position: relative;
-  margin: auto;
-  height: auto;
-  border: 5px solid #ddd; /* Add border style here */
-}
+            max-width: 1200px; /* Adjusted value to make the container wider */
+            padding: 20px;
+            position: relative;
+            margin: 40px auto; /* Added margin for vertical space */
+            height: auto;
+            border: 5px solid #ddd; /* Add border style here */
+        }
         .slideshow-container img {
             width: 100%;
             height: 500px;
@@ -361,7 +362,6 @@ include("NavBar.php");
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                             <h3>BVLGARI</h3>
-                            <p>A luxurious Italian jewelry brand.</p>
                         </div>
                         
                     </div>
@@ -373,7 +373,6 @@ include("NavBar.php");
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                             <h3>COACH</h3>
-                            <p>American luxury leather goods brand known for its handbags, combining modern and heritage styles.</p>
                         </div>
                         
                     </div>
@@ -385,7 +384,6 @@ include("NavBar.php");
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                             <h3>DIOR</h3>
-                            <p>French luxury fashion house known for its haute couture, leather goods, fragrances, and cosmetics.</p>
                         </div>
                         
                     </div>
@@ -399,7 +397,6 @@ include("NavBar.php");
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                             <h3>Escada</h3>
-                            <p>German luxury fashion house known for its bold colors, feminine silhouettes, and high-quality tailoring.</p>
                         </div>
                         
                     </div>
@@ -411,7 +408,6 @@ include("NavBar.php");
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Gentle Monster</h3>
-                            <p>South Korean luxury eyewear brand known for its innovative and fashion-forward designs.</p>
                         </div>
                         
                     </div>
@@ -423,8 +419,6 @@ include("NavBar.php");
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Gucci </h3>
-                            <p>Italian luxury fashion house known for its high-end handbags,
-shoes, clothing, and accessories.</p>
                         </div>
                         
                     </div>
@@ -438,7 +432,6 @@ shoes, clothing, and accessories.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Jaguar</h3>
-                            <p>British luxury car manufacturer known for its performance vehicles and sleek designs.</p>
                         </div>
                         
                     </div>
@@ -450,8 +443,6 @@ shoes, clothing, and accessories.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Michael Kors</h3>
-                            <p>American luxury fashion brand known for its accessible luxury handbags,
-clothing, footwear, and fragrances.</p>
                         </div>
                         
                     </div>
@@ -463,8 +454,6 @@ clothing, footwear, and fragrances.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Oakley</h3>
-                            <p> American sports performance brand known for its sunglasses,
-eyeglasses, apparel, and footwear.</p>
                         </div>
                         
                     </div>
@@ -478,7 +467,6 @@ eyeglasses, apparel, and footwear.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Police </h3>
-                            <p>Italian eyewear brand known for its trendy and stylish sunglasses and eyeglasses.</p>
                         </div>
                         
                     </div>
@@ -490,7 +478,6 @@ eyeglasses, apparel, and footwear.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Porsche Design</h3>
-                            <p>German lifestyle brand creating luxury products inspired by Porsche car design.</p>
                         </div>
                         
                     </div>
@@ -502,7 +489,6 @@ eyeglasses, apparel, and footwear.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Prada</h3>
-                            <p>Italian luxury fashion house known for its high-quality leather goods, handbags, shoes, and clothing.</p>
                         </div>
                         
                     </div>
@@ -516,7 +502,6 @@ eyeglasses, apparel, and footwear.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Puma </h3>
-                            <p>German multinational sportswear company known for its athletic apparel, footwear, and accessories.</p>
                         </div>
                         
                     </div>
@@ -528,7 +513,6 @@ eyeglasses, apparel, and footwear.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Ray-Ban</h3>
-                            <p>American sunglasses brand known for its iconic aviator and wayfarer styles.</p>
                         </div>
                         
                     </div>
@@ -540,7 +524,6 @@ eyeglasses, apparel, and footwear.</p>
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                         <h3>Vogue</h3>
-                            <p>American fashion magazine known for its influence on global fashion trends and culture.</p>
                         </div>
                         
                     </div>
