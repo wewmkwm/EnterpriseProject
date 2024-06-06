@@ -1,0 +1,26 @@
+/* Custom styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd; /* Add right border to create vertical lines */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Remove right border from the last column */
+th:last-child, td:last-child {
+    border-right: none;
+}
+
+/* Custom styles for buttons */
+.btn {
+    margin-right: 5px;
+}
