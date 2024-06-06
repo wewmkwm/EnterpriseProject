@@ -1,24 +1,38 @@
 <?php
 session_start();
+
 include("NavBar.php");
 
 ?>
 <!doctype html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <title>Home Page</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         /* Custom styles for the slideshow container */
         .slideshow-container {
+
             max-width: 1200px; /* Adjusted value to make the container wider */
             padding: 20px;
             position: relative;
             margin: 40px auto; /* Added margin for vertical space */
             height: auto;
             border: 5px solid #ddd; /* Add border style here */
+
+            max-width: 1920px; /* Set the maximum width of the slideshow container */
+            position: relative;
+            margin: auto;
+            height: auto;
+
         }
         .slideshow-container img {
             width: 100%;
@@ -40,6 +54,7 @@ include("NavBar.php");
             background-color: transparent; /* Remove background color */
         }
 
+
         .prev {
             position: absolute; /* Make the button absolute positioned */
             left: 0; /* Position it at the left edge of the page */
@@ -48,6 +63,7 @@ include("NavBar.php");
             z-index: 1; /* Ensure button is above other elements */
         
         }
+
         /* Position the "next button" to the right */
         .next {
             right: 0;
@@ -190,6 +206,12 @@ include("NavBar.php");
             transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
         }
     </style>
+
+
+	<?php
+	include("NavBar.php");
+	?>
+ main
 </head>
 <body>
     <div class="container">
@@ -356,6 +378,7 @@ include("NavBar.php");
             <h2>Brands</h2>
         </div>
         <div class="row">
+
         <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
         <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/1. BVLGARI.jpg'); background-size: contain;">
                     <img class="card-img d-none" src="Picture/logos/1. BVLGARI.jpg'" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
@@ -532,5 +555,48 @@ include("NavBar.php");
 
         </div>
     </div>
+
+            <div class="col">1 </div>
+            <div class="col">1 </div>
+            <div class="col">1 </div>
+        </div>
+        <div class="row">
+            <div class="col">1 </div>
+            <div class="col">1 </div>
+            <div class="col"> 1</div>
+        </div>
+        <div class="row">
+            <div class="col">1 </div>
+            <div class="col">1 </div>
+            <div class="col">1 </div>
+        </div>
+        <div class="row">
+            <div class="col">1 </div>
+            <div class="col"> 1</div>
+            <div class="col"> 1</div>
+        </div>
+        <div class="row">
+            <div class="col">1 </div>
+            <div class="col">1 </div>
+
+        </div>
+    </div>
+	<?php
+	
+if (isset($_SESSION['user_id'])) {
+        // Display the user_id session variable
+        echo $_SESSION['user_id'];
+    } else {
+        // Display a message if user_id session variable is not set
+        echo "User ID not set";
+    }
+
+
+// After setting session variables
+echo "User ID: " . $_SESSION['user_id'];
+echo "Username: " . $_SESSION['username'];
+
+	?>
+
 </body>
 </html>

@@ -7,6 +7,7 @@ include("connection.php");
 
 $total_price = 0; // Variable to store total price
 
+
 // Check if user is logged in
 if(isset($_SESSION['user_id'])) {
     // Query to select cart items for the logged-in user
@@ -15,6 +16,15 @@ if(isset($_SESSION['user_id'])) {
               INNER JOIN models p ON ci.product_id = p.id 
               LEFT JOIN images i ON p.id = i.model_id 
               WHERE ci.user_id = ?";
+
+// Check if user is logged in (you may need to adjust this based on your authentication system)
+if(isset($_SESSION['user_id'])) {
+    // Display the user ID
+    echo "User ID: " . $_SESSION['user_id'];
+
+    // Query to select cart items for the logged-in user
+    $query = "SELECT ci.id, ci.product_id, ci.quantity, p.name, p.price, i.image_data FROM cart_items ci INNER JOIN models p ON ci.product_id = p.id LEFT JOIN images i ON p.id = i.model_id WHERE ci.user_id = ?";
+
 
     // Prepare and bind parameters
     if($stmt = $conn->prepare($query)) {
@@ -30,32 +40,55 @@ if(isset($_SESSION['user_id'])) {
         $cart_items = array();
 
         // Display cart items
+
         echo "<div class='container my-5'>";
         echo "<h2 class='my-4 text-center'>Cart Items</h2>";
         echo "<div class='table-responsive'>";
+
+        echo "<div class='container'>";
+        echo "<h2 class='my-4'>Cart Items</h2>";
+        echo "<div class='row'>";
+        echo "<div class='col'>";
+
         echo "<table class='table table-bordered'>";
         echo "<thead class='table-dark'>";
         echo "<tr><th>No</th><th>Product Img</th><th>Product Name</th><th>Quantity</th><th>Price</th><th>Action</th></tr>";
         echo "</thead>";
         echo "<tbody>";
         while ($stmt->fetch()) {
+
             echo "<tr class='align-middle'>";
+
+            echo "<tr>";
+
             echo "<td>{$cart_item_id}</td>";
             // Display image if available
             echo "<td>";
             if ($image_data) {
+
                 echo "<img src='data:image/jpeg;base64," . base64_encode($image_data) . "' alt='Product Image' class='product-img'>";
+
+                echo "<img src='data:image/jpeg;base64," . base64_encode($image_data) . "' alt='Product Image' style='max-width: 100px; max-height: 100px;'>";
+
             } else {
                 echo "No Image Available";
             }
             echo "</td>";
             echo "<td>{$product_name}</td>";
             echo "<td>{$quantity}</td>";
+
             echo "<td>RM" . number_format($product_price, 2) . "</td>";
             // Calculate total price
             $total_price += $product_price * $quantity;
             // Add delete form with product id
             echo "<td><form method='POST'><input type='hidden' name='product_id' value='{$product_id}'><button type='submit' name='delete_btn' class='btn btn-danger btn-sm'>Delete</button></form></td>";
+
+            echo "<td>RM{$product_price}</td>";
+            // Calculate total price
+            $total_price += $product_price * $quantity;
+            // Add delete form with product id
+            echo "<td><form method='POST'><input type='hidden' name='product_id' value='{$product_id}'><button type='submit' name='delete_btn' class='btn btn-danger'>Delete</button></form></td>";
+
             echo "</tr>";
 
             // Store cart item in array
@@ -70,6 +103,7 @@ if(isset($_SESSION['user_id'])) {
         }
         echo "</tbody>";
         echo "</table>";
+
         echo "</div>"; // Close table-responsive
 
         // Display total price row
@@ -82,6 +116,35 @@ if(isset($_SESSION['user_id'])) {
         echo "<a href='address.php' class='btn btn-primary btn-lg'>Proceed to Payment</a>";
         echo "</div>"; // Close text-center
 
+        echo "</div>"; // Close col
+        echo "</div>"; // Close row
+
+        // Display total price row
+        echo "<div class='row'>";
+        echo "<div class='col'>";
+        echo "<h4 class='mt-4'>Total Price: RM{$total_price}</h4>";
+        echo "</div>"; // Close col
+        echo "</div>"; // Close row
+
+        // Display button to proceed to payment
+        // Display button to proceed to payment if there are items in the cart
+if ($total_price > 0) {
+    echo "<div class='row'>";
+    echo "<div class='col'>";
+    // Link to the address selection page - Can change between display.php to check details / address to proceed to address
+    echo "<a href='calender_appointment.php' class='btn btn-primary'>Purchase With Power Prescription</a><br/><br/><br/>";
+	echo "<a href='address.php' class='btn btn-primary'>Purchase With Frame Only</a>";
+    echo "</div>"; // Close col
+    echo "</div>"; // Close row
+} else {
+    echo "<div class='row'>";
+    echo "<div class='col'>";
+    echo "<p class='mt-4'>Your cart is empty.</p>";
+    echo "</div>"; // Close col
+    echo "</div>"; // Close row
+}
+
+
         echo "</div>"; // Close container
 
         // Save cart items into session
@@ -90,11 +153,19 @@ if(isset($_SESSION['user_id'])) {
         // Close statement
         $stmt->close();
     } else {
+
         echo "<div class='alert alert-danger' role='alert'>Error preparing statement: " . $conn->error . "</div>";
     }
 } else {
     // Handle the case where user is not logged in
     echo "<div class='container my-5'><div class='alert alert-warning' role='alert'>User is not logged in.</div></div>";
+
+        echo "Error preparing statement: " . $conn->error;
+    }
+} else {
+    // Handle the case where user is not logged in
+    echo "User is not logged in.";
+
 }
 
 // Check if delete button is clicked and process deletion
@@ -116,11 +187,19 @@ if(isset($_POST['delete_btn'])) {
             // Redirect to refresh the page
             echo "<script>window.location.href = 'view_cart.php';</script>";
         } else {
+
             echo "<div class='alert alert-danger' role='alert'>Error deleting item: " . $conn->error . "</div>";
         }
         $delete_stmt->close();
     } else {
         echo "<div class='alert alert-danger' role='alert'>Error updating quantity: " . $conn->error . "</div>";
+
+            echo "Error deleting item: " . $conn->error;
+        }
+        $delete_stmt->close();
+    } else {
+        echo "Error updating quantity: " . $conn->error;
+
     }
     
     // Close statement
@@ -130,6 +209,7 @@ if(isset($_POST['delete_btn'])) {
 // Close connection
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,3 +273,4 @@ $conn->close();
 <body>
 </body>
 </html>
+

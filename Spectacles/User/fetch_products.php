@@ -5,6 +5,7 @@
 <title>Product Display</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
+
       /* Custom CSS */
       .container {
         padding-top: 30px; /* Add some top padding for spacing */
@@ -38,6 +39,16 @@
         background-color: #0062cc; /* Adjust button hover color (optional) */
         border-color: #0062cc; /* Adjust button hover border color (optional) */
       }
+=======
+    /* Custom CSS to fix image size */
+    .product-card {
+        height: 100%; /* Set a fixed height for the card */
+    }
+    .product-card img {
+        width: 100%; /* Set width to 100% to fill the container */
+        height: auto; /* Automatically adjust height while maintaining aspect ratio */
+    }
+
 </style>
 </head>
 
@@ -54,10 +65,17 @@
             $brandId = $_GET['brandId'];
             if ($brandId === 'null') {
                 // If All button is clicked, fetch all products
+
                 $query = "SELECT * FROM models";
             } else {
                 // Otherwise, fetch products of the selected brand
                 $query = "SELECT * FROM models WHERE id = $brandId";
+
+                $query = "SELECT * FROM models WHERE category = 'Unisex'";
+            } else {
+                // Otherwise, fetch products of the selected brand
+                $query = "SELECT * FROM models WHERE id = $brandId AND category = 'Unisex'";
+
             }
 
             $result = mysqli_query($conn, $query);
