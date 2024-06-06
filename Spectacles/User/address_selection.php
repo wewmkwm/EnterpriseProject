@@ -9,11 +9,88 @@ session_start();
     <title>Address Selection</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    body {
+      font-family: 'Poppins', sans-serif; /* Unique font */
+      background-color: #e9f5f5; /* Light teal background */
+      color: #333; /* Standard text color */
+    }
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+      background-color: #fff; /* White container background */
+    }
+    .form-label {
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #555; /* Slightly darker text color for labels */
+    }
+    #block-unit-input, #building-input, #address-input {
+      height: 45px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+    }
+    #map {
+        height: 400px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #save-address-btn {
+      background-color: #ff6347; /* Vibrant coral color */
+      border-color: #ff6347;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      transition: all 0.2s ease-in-out;
+    }
+    #save-address-btn:hover {
+      background-color: #e5533d; /* Darker coral on hover */
+      border-color: #e5533d;
+      transform: translateY(-2px); /* Slight lift on hover */
+    }
+    #save-address {
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #666; /* Lighter text color for saved address */
+    }
+    .btn-primary, .btn-outline-primary {
+      padding: 12px 25px;
+      font-size: 18px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .btn-outline-primary {
+      border: 2px solid #007bff;
+      color: #007bff;
+      background: none;
+    }
+    .btn-outline-primary:hover {
+      background-color: #007bff;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
     <style>
         #map {
             height: 400px;
             width: 100%;
         }
+
     </style>
 </head>
 <body>

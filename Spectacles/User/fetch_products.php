@@ -5,6 +5,41 @@
 <title>Product Display</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
+
+      /* Custom CSS */
+      .container {
+        padding-top: 30px; /* Add some top padding for spacing */
+      }
+      .product-card {
+        border-radius: 5px; /* Add rounded corners to cards */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+      }
+      .product-card:hover {
+        transform: translateY(-3px); /* Slight card lift on hover */
+      }
+      .product-card-img {
+        /* Maintain existing styles from previous code */
+      }
+      .card-body {
+        padding: 20px; /* Adjust card body padding for better spacing */
+      }
+      .card-title {
+        margin-bottom: 10px; /* Add some space below the product name */
+        font-weight: bold; /* Make product name stand out */
+      }
+      .card-text {
+        color: #333; /* Adjust text color for better readability */
+      }
+      .btn-primary {
+        background-color: #007bff; /* Adjust button color (optional) */
+        border-color: #007bff; /* Adjust button border color (optional) */
+      }
+      .btn-primary:hover {
+        background-color: #0062cc; /* Adjust button hover color (optional) */
+        border-color: #0062cc; /* Adjust button hover border color (optional) */
+      }
+=======
     /* Custom CSS to fix image size */
     .product-card {
         height: 100%; /* Set a fixed height for the card */
@@ -13,6 +48,7 @@
         width: 100%; /* Set width to 100% to fill the container */
         height: auto; /* Automatically adjust height while maintaining aspect ratio */
     }
+
 </style>
 </head>
 
@@ -29,10 +65,17 @@
             $brandId = $_GET['brandId'];
             if ($brandId === 'null') {
                 // If All button is clicked, fetch all products
+
+                $query = "SELECT * FROM models";
+            } else {
+                // Otherwise, fetch products of the selected brand
+                $query = "SELECT * FROM models WHERE id = $brandId";
+
                 $query = "SELECT * FROM models WHERE category = 'Unisex'";
             } else {
                 // Otherwise, fetch products of the selected brand
                 $query = "SELECT * FROM models WHERE id = $brandId AND category = 'Unisex'";
+
             }
 
             $result = mysqli_query($conn, $query);

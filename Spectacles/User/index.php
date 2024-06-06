@@ -51,8 +51,12 @@
 
                         <!-- Create Account link -->
                         <p class="text-center text-white">Don't have an account yet? <br/> 
+
+						<a href="Home.php" class="text-white">Create AN Account Now</a></p>
+
 						<a href="register.php" class="text-white">Create AN Account Now</a><br/> 
 						<a href="forgetpassword.php" class="text-white">Forget Password</a></p>
+
 							</form>
                     </div>
                 </div>

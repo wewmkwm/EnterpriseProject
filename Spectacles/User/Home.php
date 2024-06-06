@@ -1,22 +1,38 @@
 <?php
 session_start();
 
+include("NavBar.php");
+
 ?>
 <!doctype html>
 <html>
 <head>
+
+    <meta charset="utf-8">
+    <title>Home Page</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home</title>
+
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         /* Custom styles for the slideshow container */
         .slideshow-container {
+
+            max-width: 1200px; /* Adjusted value to make the container wider */
+            padding: 20px;
+            position: relative;
+            margin: 40px auto; /* Added margin for vertical space */
+            height: auto;
+            border: 5px solid #ddd; /* Add border style here */
+
             max-width: 1920px; /* Set the maximum width of the slideshow container */
             position: relative;
             margin: auto;
             height: auto;
+
         }
         .slideshow-container img {
             width: 100%;
@@ -37,6 +53,17 @@ session_start();
             border-radius: 0 3px 3px 0;
             background-color: transparent; /* Remove background color */
         }
+
+
+        .prev {
+            position: absolute; /* Make the button absolute positioned */
+            left: 0; /* Position it at the left edge of the page */
+            top: 50%; /* Maintain vertical centering */
+            transform: translateY(-50%); /* Offset button height for centering */
+            z-index: 1; /* Ensure button is above other elements */
+        
+        }
+
         /* Position the "next button" to the right */
         .next {
             right: 0;
@@ -179,9 +206,12 @@ session_start();
             transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
         }
     </style>
+
+
 	<?php
 	include("NavBar.php");
 	?>
+ main
 </head>
 <body>
     <div class="container">
@@ -348,6 +378,184 @@ session_start();
             <h2>Brands</h2>
         </div>
         <div class="row">
+
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/1. BVLGARI.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/1. BVLGARI.jpg'" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h3>BVLGARI</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/2. COACH.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/2. COACH.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h3>COACH</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/3. DIOR.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/3. DIOR.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h3>DIOR</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/4. ESCADA.png'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/4. ESCADA.png" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <h3>Escada</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/5. GENTLE MONSTER.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/5. GENTLE MONSTER.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Gentle Monster</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/6. GUCCI.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/3. DIOR.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Gucci </h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/7. JAGUAR.webp'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/7. JAGUAR.webp" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Jaguar</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/8. MICHAEL KORS.png'); background-size: contain;">
+                    <img class="card-img d-none" src="8. MICHAEL KORS.png" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Michael Kors</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/9. OAKLEY.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/3. OAKLEY.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Oakley</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/10. POLICE.png'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/10. POLICE.png'" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Police </h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/11. PORSCHE DESIGN.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/11. PORSCHE DESIGN.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Porsche Design</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/12. PRADA.png'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/12. PRADA.png" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Prada</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/13. PUMA.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/13. PUMA.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Puma </h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/14. RAY BAN.jpg'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/14. RAY BAN.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Ray-Ban</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('Picture/logos/15. VOGUE.png'); background-size: contain;">
+                    <img class="card-img d-none" src="Picture/logos/14. VOGUE.jpg" alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                        <h3>Vogue</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
             <div class="col">1 </div>
             <div class="col">1 </div>
             <div class="col">1 </div>
@@ -389,5 +597,6 @@ echo "User ID: " . $_SESSION['user_id'];
 echo "Username: " . $_SESSION['username'];
 
 	?>
+
 </body>
 </html>
