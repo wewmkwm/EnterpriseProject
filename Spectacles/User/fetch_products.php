@@ -1,99 +1,99 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Product Display</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<style>
-      /* Custom CSS */
-      .container {
-        padding-top: 30px; /* Add some top padding for spacing */
-      }
-      .product-card {
-        border-radius: 5px; /* Add rounded corners to cards */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-        transition: transform 0.3s ease-in-out; /* Smooth hover effect */
-      }
-      .product-card:hover {
-        transform: translateY(-3px); /* Slight card lift on hover */
-      }
-      .product-card-img {
-        /* Maintain existing styles from previous code */
-      }
-      .card-body {
-        padding: 20px; /* Adjust card body padding for better spacing */
-      }
-      .card-title {
-        margin-bottom: 10px; /* Add some space below the product name */
-        font-weight: bold; /* Make product name stand out */
-      }
-      .card-text {
-        color: #333; /* Adjust text color for better readability */
-      }
-      .btn-primary {
-        background-color: #007bff; /* Adjust button color (optional) */
-        border-color: #007bff; /* Adjust button border color (optional) */
-      }
-      .btn-primary:hover {
-        background-color: #0062cc; /* Adjust button hover color (optional) */
-        border-color: #0062cc; /* Adjust button hover border color (optional) */
-      }
-</style>
-</head>
-
-<body>
-<div class="container">
-    <div class="row">
-        <?php
-        // Include your database connection file
-        include("connection.php");
-		
-
-        // Fetch products related to the selected brand
-        if (isset($_GET['brandId'])) {
-            $brandId = $_GET['brandId'];
-            if ($brandId === 'null') {
-                // If All button is clicked, fetch all products
-                $query = "SELECT * FROM models";
-            } else {
-                // Otherwise, fetch products of the selected brand
-                $query = "SELECT * FROM models WHERE id = $brandId";
-            }
-
-            $result = mysqli_query($conn, $query);
-
-            // Display products as Bootstrap cards
-            while ($row = mysqli_fetch_assoc($result)) {
-                // Fetch image for the current product from the images table
-                $imageQuery = "SELECT * FROM images WHERE model_id = " . $row['id'];
-                $imageResult = mysqli_query($conn, $imageQuery);
-                $imageRow = mysqli_fetch_assoc($imageResult);
-
-                echo '<div class="col-md-4">';
-                echo '<div class="card product-card">';
-                // Check if an image is found for the product
-				echo '<div class="card product-card-img">';
-                if ($imageRow && $imageRow['image_data']) {
-                    // Display the image directly from the database using base64 encoding
-                    echo '<img src="data:image/jpeg;base64,' . base64_encode($imageRow['image_data']) . '" class="card-img-top" alt="Product Image">';
-                } else {
-                    // If no image found or image_data is empty, display a placeholder image or handle accordingly
-                    echo '<img src="path_to_placeholder_image/placeholder.jpg" class="card-img-top" alt="Product Image">';
-                }
-				echo '</div>';
-                echo '<div class="card-body">';
-                echo '<h5 class="card-title">' . $row['name'] . '</h5>';
-                echo '<p class="card-text">Price: ' . $row['price'] . '</p>';
-                echo '<p class="card-text">Quantity: ' . $row['quantity'] . '</p>';
-                echo '<a href="add_to_cart.php?product_id=' . $row['id'] . '" class="btn btn-primary">Add to Cart</a>';
-                // You can display more details here if needed
-                echo '</div>'; // Close card-body
-                echo '</div>'; // Close card
-                echo '</div>'; // Close col-md-4
-            }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="path_to_bootstrap_css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
+    <style>
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        ?>
+        .card-img-container {
+            flex: 1; /* Allow the image container to grow and fill space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            min-height: 200px; /* Set a minimum height for the image container */
+        }
+        .card-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensure the image is contained within the container without being cropped */
+        }
+        .product-card .card-body {
+            flex-grow: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .row {
+            row-gap: 15px; /* Adjust the vertical spacing between the rows */
+        }
+        .col-md-4 {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <?php
+            // Include your database connection file
+            include("connection.php");
+
+            // Fetch products related to the selected brand
+            if (isset($_GET['brandId'])) {
+                $brandId = $_GET['brandId'];
+                if ($brandId === 'null') {
+                    // If All button is clicked, fetch all products
+                    $query = "SELECT * FROM models";
+                } else {
+                    // Otherwise, fetch products of the selected brand
+                    $query = "SELECT * FROM models WHERE brand_id = $brandId";
+                }
+
+                $result = mysqli_query($conn, $query);
+
+                // Display products as Bootstrap cards
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // Fetch image for the current product from the images table
+                    $imageQuery = "SELECT * FROM images WHERE model_id = " . $row['id'];
+                    $imageResult = mysqli_query($conn, $imageQuery);
+                    $imageRow = mysqli_fetch_assoc($imageResult);
+                    ?>
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card product-card">
+                            <div class="card-img-container d-flex align-items-center justify-content-center">
+                                <?php if ($imageRow && $imageRow['image_data']) { ?>
+                                    <!-- Display the image directly from the database using base64 encoding -->
+                                    <img src="data:image/jpeg;base64,<?php echo base64_encode($imageRow['image_data']); ?>" class="card-img-top" alt="Product Image">
+                                <?php } else { ?>
+                                    <!-- If no image found or image_data is empty, display a placeholder image -->
+                                    <img src="path_to_placeholder_image/placeholder.jpg" class="card-img-top" alt="Product Image">
+                                <?php } ?>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-end">
+                                <h5 class="card-title"><?php echo $row['name']; ?></h5>
+                                <p class="card-text">Price: <?php echo $row['price']; ?></p>
+                                <p class="card-text">Quantity: <?php echo $row['quantity']; ?></p>
+                                <a href="add_to_cart.php?product_id=<?php echo $row['id']; ?>" class="btn btn-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+        </div>
     </div>
-</div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="path_to_jquery/jquery.min.js"></script>
+    <script src="path_to_bootstrap_js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
