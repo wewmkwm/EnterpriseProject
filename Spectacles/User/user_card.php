@@ -54,6 +54,7 @@ while ($rowCard = mysqli_fetch_assoc($resultCards)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select Card</title>
@@ -141,6 +142,21 @@ while ($rowCard = mysqli_fetch_assoc($resultCards)) {
                             <label>
                                 <input type="radio" name="selected_card" value="<?php echo $card['card_id']; ?>">
                                 <span>**** **** **** <?php echo substr($card['card_number'], -4); ?></span>
+=======
+    <!-- Meta tags, title, and CSS -->
+</head>
+<body>
+    <div class="container mt-4">
+        <form action="#" method="post">
+            <?php if (!empty($cards)): ?> <!-- Check if there are any cards available -->
+                <h2>Select Card</h2>
+                <div id="cards-container">
+                    <?php foreach ($cards as $card): ?>
+                        <div class="card">
+                            <label>
+                                <input type="radio" name="selected_card" value="<?php echo $card['card_id']; ?>">
+                                **** **** **** <?php echo substr($card['card_number'], -4); ?>
+
                             </label>
                         </div>
                     <?php endforeach; ?>
@@ -150,6 +166,7 @@ while ($rowCard = mysqli_fetch_assoc($resultCards)) {
                 <p>No cards available.</p>
             <?php endif; ?>
         </form>
+
         <a href="add_card.php" class="btn btn-secondary mt-2">Add Card</a>
     </div>
 
@@ -157,3 +174,12 @@ while ($rowCard = mysqli_fetch_assoc($resultCards)) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+        <a type="submit" class="btn btn-primary" href="add_card.php">Add Card</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+</body>
+</html>
+	
+
